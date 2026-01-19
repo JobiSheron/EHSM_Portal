@@ -43,14 +43,16 @@
 }
 
 .loginInput input {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: #ffffff;
+    background: rgba(255, 255, 255, 0.9); /* lighter background for readability */
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    color: #000000; /* black text */
 }
 
+/* Placeholder text */
 .loginInput input::placeholder {
-    color: #d1d1d1;
+    color: #555555; /* dark grey placeholder */
 }
+
 
 .loginButton {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;

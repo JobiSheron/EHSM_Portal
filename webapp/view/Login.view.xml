@@ -9,7 +9,7 @@
             <FlexBox alignItems="Center" justifyContent="Center" height="100%" direction="Column" class="loginContainer">
                 <items>
                     <VBox class="glassLoginBox sapUiMediumMargin">
-                        <Title text="Safety Engineer Portal" titleStyle="H1" class="loginTitle sapUiSmallMarginBottom" />
+                        <Title text="EHSM Portal" titleStyle="H1" class="loginTitle sapUiSmallMarginBottom" />
                         <Title text="Welcome Back" titleStyle="H3" class="loginSubtitle sapUiMediumMarginBottom" />
                         
                         <Label text="Employee ID" class="loginLabel" />
