@@ -1,0 +1,117 @@
+/* Global Background */
+.loginPageBackground, .dashboardPage {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); /* Deep Blue Gradient */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Glassmorphism Common */
+.glassLoginBox, .glassCard, .glassTable {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-radius: 10px;
+}
+
+/* Login Styling */
+.loginContainer {
+    padding: 2rem;
+}
+
+.glassLoginBox {
+    padding: 3rem;
+    width: 400px;
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.loginTitle span, .loginSubtitle span {
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    font-weight: 700;
+}
+
+.loginLabel {
+    color: #e0e0e0;
+    font-weight: bold;
+    text-align: left;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.loginInput input {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
+
+.loginInput input::placeholder {
+    color: #d1d1d1;
+}
+
+.loginButton {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Dashboard Styling */
+.sectionTitle span {
+    color: #ffffff;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.kpiContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.kpiCard {
+    padding: 1.5rem;
+    min-width: 200px;
+    text-align: center;
+    color: white;
+}
+
+.kpiLabel {
+    color: #e0e0e0;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.kpiValue {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.openIncidents span { color: #ff6b6b; }
+.highRisks span { color: #feca57; }
+.goodScore span { color: #1dd1a1; }
+
+/* Table Styling Overrides to fit Glass theme */
+.glassTable, .glassTable tr, .glassTable th, .glassTable td {
+    background: transparent !important;
+     color: #ffffff;
+}
+
+.glassTabs .sapMITBText {
+    color: #e0e0e0;
+}
+
+.glassTabs .sapMITBSelected .sapMITBText {
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+}
+
+.glassTabs .sapMITBFilterIcon {
+    color: #a4b0be;
+}
+
+.glassTabs .sapMITBSelected .sapMITBFilterIcon {
+    color: #ffffff;
+}

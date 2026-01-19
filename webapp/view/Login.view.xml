@@ -1,0 +1,27 @@
+<mvc:View controllerName="ehsm.controller.Login"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    displayBlock="true">
+    <Page id="loginPage" showHeader="false" class="loginPageBackground">
+        <content>
+            <FlexBox alignItems="Center" justifyContent="Center" height="100%" direction="Column" class="loginContainer">
+                <items>
+                    <VBox class="glassLoginBox sapUiMediumMargin">
+                        <Title text="Safety Engineer Portal" titleStyle="H1" class="loginTitle sapUiSmallMarginBottom" />
+                        <Title text="Welcome Back" titleStyle="H3" class="loginSubtitle sapUiMediumMarginBottom" />
+                        
+                        <Label text="Employee ID" class="loginLabel" />
+                        <Input id="userIdInput" placeholder="Enter your Employee ID" width="100%" class="loginInput sapUiSmallMarginBottom" />
+                        
+                        <Label text="Password" class="loginLabel" />
+                        <Input id="passwordInput" type="Password" placeholder="Enter your Password" width="100%" class="loginInput sapUiMediumMarginBottom" />
+                        
+                        <Button text="Login" type="Emphasized" press="onLoginPress"  width="100%" class="loginButton" />
+                    </VBox>
+                </items>
+            </FlexBox>
+        </content>
+    </Page>
+</mvc:View>

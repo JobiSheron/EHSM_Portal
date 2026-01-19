@@ -1,0 +1,100 @@
+<mvc:View controllerName="ehsm.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+    <Page id="dashboardPage" title="Safety Engineer Dashboard" showNavButton="true" navButtonPress="onNavBack" class="dashboardPage">
+        <headerContent>
+            <Button icon="sap-icon://log" press="onLogout" tooltip="Logout" type="Transparent"/>
+        </headerContent>
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <Title text="Plant Overview" level="H2" class="sectionTitle sapUiSmallMarginBottom"/>
+                <HBox class="kpiContainer sapUiMediumMarginBottom" wrap="Wrap">
+                   <VBox class="kpiCard glassCard sapUiSmallMarginEnd">
+                       <Label text="Open Incidents" class="kpiLabel"/>
+                       <Title text="{dashboardView>/openIncidentsCount}" class="kpiValue openIncidents"/>
+                   </VBox>
+                   <VBox class="kpiCard glassCard sapUiSmallMarginEnd">
+                       <Label text="High Risks" class="kpiLabel"/>
+                       <Title text="{dashboardView>/highRisksCount}" class="kpiValue highRisks"/>
+                   </VBox>
+                   <VBox class="kpiCard glassCard">
+                       <Label text="Safety Score" class="kpiLabel"/>
+                       <Title text="98%" class="kpiValue goodScore"/>
+                   </VBox>
+                </HBox>
+
+                <IconTabBar id="idIconTabBar" expanded="true" class="glassTabs">
+                    <items>
+                        <IconTabFilter key="incidents" text="Incident Management" icon="sap-icon://alert">
+                            <Table id="incidentsTable" class="glassTable" growing="true" growingThreshold="10" items="{dashboardView>/incidents}">
+                                <headerToolbar>
+                                    <Toolbar>
+                                        <Title text="Reported Incidents" level="H3"/>
+                                        <ToolbarSpacer/>
+                                        <SearchField search="onSearchIncidents" width="200px"/>
+                                    </Toolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column><Text text="ID" /></Column>
+                                    <Column><Text text="Description" /></Column>
+                                    <Column minScreenWidth="Tablet" demandPopin="true"><Text text="Plant" /></Column>
+                                    <Column minScreenWidth="Tablet" demandPopin="true"><Text text="Category" /></Column>
+                                    <Column><Text text="Priority" /></Column>
+                                    <Column><Text text="Status" /></Column>
+                                    <Column minScreenWidth="Tablet" demandPopin="true"><Text text="Date" /></Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem vAlign="Middle" type="Navigation">
+                                        <cells>
+                                            <ObjectIdentifier title="{dashboardView>IncidentId}"/>
+                                            <Text text="{dashboardView>IncidentDescription}"/>
+                                            <Text text="{dashboardView>Plant}"/>
+                                            <Text text="{dashboardView>IncidentCategory}"/>
+                                            <ObjectStatus text="{dashboardView>IncidentPriority}" state="{path: 'dashboardView>IncidentPriority', formatter: '.formatter.priorityState'}"/>
+                                            <ObjectStatus text="{dashboardView>IncidentStatus}" state="{path: 'dashboardView>IncidentStatus', formatter: '.formatter.statusState'}"/>
+                                            <Text text="{path: 'dashboardView>IncidentDate', type: 'sap.ui.model.type.Date', formatOptions: {style: 'medium', pattern: 'yyyy-MM-dd'}}"/>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </IconTabFilter>
+                        
+                        <IconTabFilter key="risks" text="Risk Assessment" icon="sap-icon://shield">
+                            <Table id="risksTable" class="glassTable" growing="true" growingThreshold="10" items="{dashboardView>/risks}">
+                                <headerToolbar>
+                                    <Toolbar>
+                                        <Title text="Identified Risks" level="H3"/>
+                                        <ToolbarSpacer/>
+                                        <SearchField search="onSearchRisks" width="200px"/>
+                                    </Toolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column><Text text="ID" /></Column>
+                                    <Column><Text text="Description" /></Column>
+                                    <Column minScreenWidth="Tablet" demandPopin="true"><Text text="Plant" /></Column>
+                                    <Column><Text text="Severity" /></Column>
+                                    <Column minScreenWidth="Tablet" demandPopin="true"><Text text="Likelihood" /></Column>
+                                    <Column minScreenWidth="Tablet" demandPopin="true"><Text text="Mitigation" /></Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem vAlign="Middle" type="Navigation">
+                                        <cells>
+                                            <ObjectIdentifier title="{dashboardView>RiskId}"/>
+                                            <Text text="{dashboardView>RiskDescription}"/>
+                                            <Text text="{dashboardView>Plant}"/>
+                                            <ObjectStatus text="{dashboardView>RiskSeverity}" state="{path: 'dashboardView>RiskSeverity', formatter: '.formatter.severityState'}"/>
+                                            <Text text="{dashboardView>Likelihood}"/>
+                                            <Text text="{dashboardView>MitigationMeasures}"/>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </IconTabFilter>
+                    </items>
+                </IconTabBar>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
